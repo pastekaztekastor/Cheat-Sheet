@@ -1,0 +1,25 @@
+popup 1
+Merci de bien vouloir rentrer
+votre nom pour les scores
+et d'appuyer sur ENTRER
+popup 2
+Nombre de lignes du niveau ?
+popup 3
+Nombre de colonnes du niveau ?
+popup 4
+Quelle est le temps maximum pour
+finir le niveau ?
+popup 5
+Quelle est la vitesse de base
+de deplassement ?
+popup 6
+Quel niveau existant voulez
+vous charger ?
+popup 7
+Etes vous sur de vouloir tout
+supprimer ?
+popup 8
+Engristrer avec succes !
+popup 9
+Avez vous enregistrer ?
+popup 10
