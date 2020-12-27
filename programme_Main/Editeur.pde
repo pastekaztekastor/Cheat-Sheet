@@ -35,7 +35,7 @@ class Editeur{
     _plateau[0][1]="E";
     // Emplacement et boite pour l'affichage des variables du niveau
     _variableDuNiveau[0] = new Boite( new PVector(width*0.9,
-                                                  height*0.5-3*height*0.68/8+1*height*0.68/18),
+                                                  height*0.5-3*height*0.63/6+2.5*height*0.68/12),
                                       height*0.68,///8,
                                       width*0.2,
                                       "VARIABLE",
@@ -43,7 +43,7 @@ class Editeur{
                                       false,
                                       0);
     _variableDuNiveau[1] = new Boite( new PVector(width*0.9,
-                                                  height*0.5-1*height*0.68/8+1*height*0.68/18),
+                                                  height*0.5-1*height*0.63/6+2.5*height*0.68/12),
                                       height*0.68,///8,
                                       width*0.2,
                                       "VARIABLE",
@@ -51,7 +51,7 @@ class Editeur{
                                       false,
                                       0);
     _variableDuNiveau[2] = new Boite( new PVector(width*0.9,
-                                                  height*0.5+1*height*0.68/8+1*height*0.68/18),
+                                                  height*0.5+1*height*0.63/6+2.5*height*0.68/12),
                                       height*0.68,///8,
                                       width*0.2,
                                       "VARIABLE",
