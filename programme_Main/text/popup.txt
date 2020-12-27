@@ -13,8 +13,8 @@ popup 5
 Quelle est la vitesse de base
 de deplassement ?
 popup 6
-Quel niveau existant voulez
-vous charger ?
+Qu'aurait fait
+Neals FOURNAISE ?
 popup 7
 Etes vous sur de vouloir tout
 supprimer ?

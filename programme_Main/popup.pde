@@ -19,7 +19,7 @@ class Popup {
   int             _envoieVers;
   boolean         _retour;
 
-  // CRÉATION D'UNE POPUP EN FONCTION DU TEXTE DEDANS ET DE CE QU'ELLE FAIT COMME ACTION
+  // CRÉATION D'UNE POPUP EN FONCTION DU TEXTE CONTENUE EN ELLE ET DE CE QU'ELLE FAIT COMME ACTION
   Popup(int paragraphe, int vers, String var){
     // Variable modifié par la boite de texte de la popup
     _variableAffecter     = var;
@@ -39,7 +39,7 @@ class Popup {
     fill(ROUGE,200);
     stroke(BLANC);
     rect(_positionPopupX,_positionPopupY,_dimentionPopupX,_dimentionPopupY);
-    // Fenêtre de frape
+    // Fenêtre de frappe
     PVector positionDeLaFenetreDeFrappe = new PVector(_positionPopupX,_positionPopupY+_dimentionPopupY/6);
     rectMode(CENTER);
     fill(NOIR);
@@ -74,7 +74,7 @@ class Popup {
     _menuPopup.configLargeur(_dimentionPopupX);
     _menuPopup.configPosition(new PVector(_positionPopupX,_positionPopupY+2*_dimentionPopupY/5));
     _menuPopup.action();
-    // Action de s inputs calvier.
+    // Action des inputs calvier.
     if (keyPressed){
       switch (key){
         case BACKSPACE:
@@ -106,7 +106,7 @@ class Popup {
     }
   }
 
-  // MODIFIE DES VARIABLES
+  // MODIFICATION DE LA VARIABLE SÉLECTIONNÉ
   void variableEdit(){
     switch (_variableAffecter){
       case "Niveau":

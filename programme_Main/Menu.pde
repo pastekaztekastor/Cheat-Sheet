@@ -11,13 +11,13 @@ class Menu {
   Button[]    _contenuDuMenu = new Button[0];
   int         _nbDeLignes;
   int         _nbDeColonnes;
-  // CRÉATION D'UN MENU EN FONCTION DU NOMBRE DE LIGNE ET DE COLONNES
+  // CRÉATION D'UN MENU EN FONCTION DU NOMBRE DE LIGNE ET DE COLONNE
   Menu(int nbDeLignes,int nbDeColonnes){
     _nbDeLignes   = nbDeLignes;
     _nbDeColonnes = nbDeColonnes;
   }
   // AJOUTE UN BOUTON
-  // Reparametre les varibles de chaque boutons (taille et pos) en fonciton du nombre de bouton dans le menu
+  // Reparamètre les variables de chaques boutons (taille et pos) en fonciton du nombre de bouton dans le menu
   void ajoutBouton( int indiceDuLien,
                   String typeDuLien,
                   String nom,
@@ -33,13 +33,13 @@ class Menu {
   // ACTION DE CHAQUE BOUTON
   void action() {
     for (int a=0;a<_contenuDuMenu.length;a++){
-      // Re regles les dimentions  des boutons en fontion de la boite dans laquel il sont
+      // Re règles les dimentions  des boutons en fontion de la boite dans laquel ils sont
       _contenuDuMenu[a].configHauteurMenu(_hauteur);
       _contenuDuMenu[a].configLargeurMenu(_largeur);
       _contenuDuMenu[a].configPositionMenu(_position);
       _contenuDuMenu[a].configNbDeLignesMenu(_nbDeLignes);
       _contenuDuMenu[a].configNbDeColonnesMenu(_nbDeColonnes);
-      // Re calcule tout les attribut d'un bouton comme lors de leur instanciation.
+      // Re calcule tout les attributs d'un bouton comme lors de leur instanciation.
       _contenuDuMenu[a].recalculAttribut();
       // Action au clique
       _contenuDuMenu[a].actionAuClique();
@@ -61,13 +61,13 @@ class Menu {
 
   void affiche ( ) {
     for (int a=0;a<_contenuDuMenu.length;a++){
-      // Re regles les dimentions  des boutons en fontion de la boite dans laquel il sont
+      // Re règles les dimentions  des boutons en fontion de la boite dans laquel il sont
       _contenuDuMenu[a].configHauteurMenu(_hauteur);
       _contenuDuMenu[a].configLargeurMenu(_largeur);
       _contenuDuMenu[a].configPositionMenu(_position);
       _contenuDuMenu[a].configNbDeLignesMenu(_nbDeLignes);
       _contenuDuMenu[a].configNbDeColonnesMenu(_nbDeColonnes);
-      // Re calcule tout les attribut d'un bouton comme lors de leur instanciation.
+      // Re calcule tout les attributs d'un bouton comme lors de leur instanciation.
       _contenuDuMenu[a].recalculAttribut();
       // Affiche le bouton
       _contenuDuMenu[a].affiche();

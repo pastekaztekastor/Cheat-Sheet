@@ -32,7 +32,7 @@ class Page{
     _nom              = nom;
   }
 
-  // MÉTHODE D'AJJOUTE D'UNE BOITE
+  // MÉTHODE D'AJOUT D'UNE BOITE
   // En passant par la méthode configBoite de cette class
   void ajoutBoite(int       hauteurBoitePrct,
                   int       largeurBoitePrct,
@@ -57,9 +57,9 @@ class Page{
   void addPopups(int paragraphe, int vers, String var){
     _tableDePopup = (Popup[])append(_tableDePopup,new Popup(paragraphe, vers, var));
   }
-  // MÉTHODE QUI RETOURNE LES PARAMÈTRE DE CRÉATION D'UNE BOITE
-  // Elle convertie une position relative en pourcentage
-  // en position absolu en pixel
+  // MÉTHODE QUI RETOURNE LES PARAMÈTRES DE CRÉATION D'UNE BOITE
+  // Elle convertie une position relative en pourçentage
+  // en position absolue en pixel
   Boite configBoite(  int hauteurBoitePrct,
                       int largeurBoitePrct,
                       int facteurPosX,
@@ -91,7 +91,7 @@ class Page{
     else {return false;}
   }
 
-  // CONFIGURE LA TAILLE D'UN TEXTE D'UNE BOITE D'ONT ON À LE NUMÉROS
+  // CONFIGURE LA TAILLE D'UN TEXTE D'UNE BOITE DONT ON À LE NUMÉROS
   void configTailleTxt(float tailleTexte, int numeroDeBoite){
     _tableDeBoite[numeroDeBoite].configTailleTxt(tailleTexte);
   }

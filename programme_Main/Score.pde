@@ -78,7 +78,7 @@ class Score{
   void range(){
     for (int a = 0 ;a<_hightScore.length;a++){
       int deltaAvance = 0;
-      int valeur = int(_hightScore[a]); // Prend le tab par la fin
+      int valeur = int(_hightScore[a]); // Prend la table par la fin
       for (int b = a; b>0 ; b--){
         int valeurSup = int(_hightScore[b-1]);
         if (valeur>valeurSup){

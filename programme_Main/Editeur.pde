@@ -25,7 +25,7 @@ class Editeur{
     _hauteur          =hauteur;
     _largeur          =largeur;
     _position         =position;
-    // PAramètre de base de l'éditeur lors de son ouverture
+    // Paramètre de base de l'éditeur lors de son ouverture
     _nombreDeLigne    = 1;
     _nombreDeColonne  = 2;
     _tempsDuNiveau    = 1000;
@@ -33,7 +33,7 @@ class Editeur{
     _plateau = new String[_nombreDeLigne][_nombreDeColonne];
     _plateau[0][0]="S";
     _plateau[0][1]="E";
-    // Emplacement et boite pour l'affichage des variable du niveau
+    // Emplacement et boite pour l'affichage des variables du niveau
     _variableDuNiveau[0] = new Boite( new PVector(width*0.9,
                                                   height*0.5-3*height*0.68/8+1*height*0.68/18),
                                       height*0.68,///8,
@@ -70,12 +70,12 @@ class Editeur{
 
   // AFFICHAGE DE LA GRILLE DE FOND
   void afficheGrille(){
-    // Calcule des dimention et les emplacemenet de chaque case en fonction des
-    // dimentions du plateau et de la position de l'éditaure ainsi que de ces dimentions
+    // Calcule des dimentions et les emplacements de chaque case en fonction des
+    // dimentions du plateau et de la position de l'éditeur ainsi que de ces dimentions
     float dimCasePixel = min(_largeur/_plateau[0].length,_hauteur/_plateau.length);
     PVector coinsSup = new PVector( _position.x-dimCasePixel/2*_plateau[0].length+dimCasePixel/2,
                                     _position.y-dimCasePixel/2*_plateau.length+dimCasePixel/2);
-    // Parcour le plateur
+    // Parcour le plateau
     for (int cetteLigne=0; cetteLigne<_plateau.length; cetteLigne++){
       for (int cetteColonne=0; cetteColonne<_plateau[cetteLigne].length; cetteColonne++){
         if (_plateau[cetteLigne][cetteColonne]!=null){
@@ -162,7 +162,7 @@ class Editeur{
               break;
           }
         }
-        // Remplie les case sans valeur
+        // Remplie les cases sans valeur
         else{
           _plateau[cetteLigne][cetteColonne]="0";
         }
@@ -170,7 +170,7 @@ class Editeur{
     }
   }
 
-  // ACTUALISE LE CONTENUE DES VARIABLES ET LES AFFICHES
+  // ACTUALISE LE CONTENUE DES VARIABLES ET LES AFFICHE
   void afficheVariable(){
     _variableDuNiveau[0]._nom = str(_tempsDuNiveau);
     _variableDuNiveau[0].affiche();
@@ -199,7 +199,7 @@ class Editeur{
     }
   }
 
-  // RÉCUPÈRE LE NUMÉROS DE LIGNE ET DE COLONNE DE LA OU POINT LA SOURIE
+  // RÉCUPÈRE LE NUMÉRO DE LIGNE ET DE COLONNE DE LA OU POINTE LA SOURIE
   void coordAIndice(){
 
     float dimCasePixel = min(_largeur/_plateau[0].length,_hauteur/_plateau.length);
@@ -241,7 +241,7 @@ class Editeur{
     }
   }
 
-  // CONVERTI LE TAB PLATEAU EN UN FICHIER TEXTE ET L'AJOUTEET FICHIER NIVEAU.TXT
+  // CONVERTI LE TAB PLATEAU EN UN FICHIER TEXTE ET L'AJOUTE AU FICHIER NIVEAU.TXT
   void enregistre(){
     println("save");
     String[] fichierNiveauAvant = loadStrings("text/niveau.txt");

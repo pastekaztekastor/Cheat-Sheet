@@ -1,18 +1,18 @@
 import processing.core.*; 
-import processing.data.*;
-import processing.event.*;
-import processing.opengl.*;
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
 
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.io.File;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.IOException;
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
 
-public class Projet_V3 extends PApplet {
+public class programme_Main extends PApplet {
 
  //  ____   _                  _           _                   _
  // / ___| | |__    ___   ___ | |_    ___ | |__    ___   __ _ | |_
@@ -21,7 +21,7 @@ public class Projet_V3 extends PApplet {
  // |____/ |_| |_| \___| \___| \__|  \___||_| |_| \___| \__,_| \__|
  //
 
-  //    DECLARATION DES VARIABLES GLOBALES
+  //    DÉCLARATION DES VARIABLES GLOBALES
 final float margeDesBoite                   = 20;
 final float epaisseurDesBordures            = 0.008f;
 final float tailleTexte1                    = min(width,height)*0.20f;
@@ -47,7 +47,7 @@ int     scoreDuJoueur                       = 0;
 String  tamponDuPopup                       = "";
 Score   score;
 
-//    DECLARATION DES TABLE D'OBJETS
+//    DECLARATION DES TABLES D'OBJETS
 Page[] tablePage                            = new Page[8];
 Menu[] tableMenu                            = new Menu[8];
 Text[] tableTexte                           = new Text[5];
@@ -55,12 +55,12 @@ Level[] tableNiveau                         = new Level[0];
 Editeur editeur;
 
 public void setup(){
-
+  
   background(NOIR);
   PFont font;
   font = loadFont("FORCED_SQUARE-50.vlw");
   textFont(font, 30);
-  //    CREATION DES OBJET TEXTES
+  //    CREATION DES OBJETS TEXTES
   tableTexte[0] = new Text("contenue");
   tableTexte[1] = new Text("niveau");
   tableTexte[2] = new Text("score");
@@ -79,11 +79,11 @@ public void setup(){
   tableMenu[1] = new Menu(1,4); //Footer 1
     tableMenu[1].ajoutBouton(-1,   "PAGE",     "Quitter",   1);
     tableMenu[1].ajoutBouton(0,    "PAGE",     "Accueil",   2);
-  tableMenu[3] = new Menu(1,3); //Footeur game
+  tableMenu[3] = new Menu(1,3); //Footer game
     tableMenu[3].ajoutBouton(0,    "recharge", "Recharger", 0);
     tableMenu[3].ajoutBouton(1,    "PAGE",     "Retour",    1);
     tableMenu[3].ajoutBouton(0,    "PAGE",     "Accueil",   2);
-  tableMenu[4] = new Menu(1,3); //Footeur game
+  tableMenu[4] = new Menu(1,3); //Footer game
     tableMenu[4].ajoutBouton(0,    "PAGE",     "Retour",    1);
   tableMenu[5] = new Menu(5,1); //Coté gauche Editeur
     tableMenu[5].ajoutBouton(1,    "ETAT",     "Vide",      0);
@@ -97,8 +97,8 @@ public void setup(){
     tableMenu[6].configPopup(0,4);
     tableMenu[6].configPopup(1,2);
     tableMenu[6].configPopup(2,3);
-  tableMenu[7] = new Menu(1,5); //Footeur éditeur
-    tableMenu[7].ajoutBouton(4,    "POPUP",    "Charger",   0);
+  tableMenu[7] = new Menu(1,5); //Footer éditeur
+    tableMenu[7].ajoutBouton(4,    "POPUP",    "Joke",   0);
     tableMenu[7].ajoutBouton(4,    "POPUP",    "Effacer",   1);
     tableMenu[7].ajoutBouton(4,    "POPUP",    "Tester",    2);
     tableMenu[7].ajoutBouton(4,    "POPUP",    "Sauver",    3);
@@ -107,7 +107,7 @@ public void setup(){
     tableMenu[7].configPopup(1,7);
     tableMenu[7].configPopup(3,8);
     tableMenu[7].configPopup(4,9);
-  //    CREATION DES PAGES
+  //    CRÉATION DES PAGES
   tablePage[0] = new Page("Accueil");
     //                      hauteur, largeur,PosX, PosY, typeDeContenu, pointeur,Identité, Contour
     tablePage[0].ajoutBoite(30,      60,     50,   15,   "TEXTE",       1,       0,        false);
@@ -164,14 +164,14 @@ public void setup(){
     tablePage[5].configTailleTxt (tailleTexte2,0);
   tablePage[6] = new Page("Niveau");
     //                      hauteur, largeur,PosX, PosY, typeDeContenu, pointeur,Identité, Contour
-    tablePage[6].ajoutBoite(12,      60 ,    50,   10,   "NOM",         0,       0,        true);
+    tablePage[6].ajoutBoite(12,      60 ,    50,   10,   "NOMNIVEAU",   0,       0,        true);
     tablePage[6].ajoutBoite(12,      20 ,    90,   10,   "VARIABLE",    0,       0,        true);
     tablePage[6].ajoutBoite(60,      100,    50,   50,   "NIVEAU",      0,       0,        false);
     tablePage[6].ajoutBoite(12,      60 ,    50,   90,   "MENU",        3,       0,        true);
     tablePage[6].ajoutBoite( 6,      20 ,    10,   13,   "VARIABLE",    0,       1,        true);
     tablePage[6].ajoutBoite( 6,      20 ,    10,    7,   "SCORE",       3,       0,        true);
     // Ajoute des boutons dans le menu en fonciton du nombre de niveaux.
-    tableMenu[2] = new Menu(4,4); //Choix des Niveau
+    tableMenu[2] = new Menu(4,4); //Choix des Niveaux
     for (int a = 0; a<tableTexte[1].compte("LVL")-1;a++){
       int indice = a+1;
       tableMenu[2].ajoutBouton(a,      "level",    "Lvl "+indice, a);
@@ -198,7 +198,7 @@ public void draw() {
   }
   // Calcule de la variable temporel
   uniteDeTemps = (millis())/10;
-  // Affichage des elements de l'écran
+  // Affichage des éléments de l'écran
   background(NOIR);
   tablePage[pageEnCoursDaffichage].affiche();
 }
@@ -258,6 +258,9 @@ class Boite{
       case "NOM":
       afficheNom();
       break;
+      case "NOMNIVEAU":
+      afficheNomNiveau();
+      break;
       case "SCORE":
       afficheScore();
       break;
@@ -269,7 +272,7 @@ class Boite{
     }
   }
 
-  // LES SETTER
+  // LES SETTERS
   public void config(String typeDeContenu,int indiceDuContenu){
     _typeDeContenu    = typeDeContenu;
     _indiceDuContenu  = indiceDuContenu;
@@ -288,7 +291,7 @@ class Boite{
     _typeDeContenu    = typeDeContenu;
   }
 
-  // LES AFFICHAGE
+  // LES AFFICHAGES
   public void afficheContour(){
     if (_afficheContour){
       stroke(ROUGE);
@@ -323,6 +326,13 @@ class Boite{
     textSize(_tailleTexte);
     text(_nom,_positionMilieux.x,_positionMilieux.y);
   }
+  public void afficheNomNiveau(){
+    textAlign(CENTER, CENTER);
+    fill(BLANC);
+    textSize(_tailleTexte);
+    int numeroDuNiveau = niveauEnCoursDaffichage+1;
+    text(_nom+" "+numeroDuNiveau,_positionMilieux.x,_positionMilieux.y);
+  }
   public void afficheScore(){
     textAlign(CENTER, CENTER);
     fill(BLANC);
@@ -339,7 +349,7 @@ class Boite{
     editeur.affiche();
   }
 
-  // LES ACTION
+  // LES ACTIONS
   public void action(){
     if (_typeDeContenu == "MENU")  {tableMenu[_indiceDuContenu].action();}
     if (_typeDeContenu == "NIVEAU"){tableNiveau[niveauEnCoursDaffichage].action();}
@@ -385,9 +395,9 @@ class Button {
   PVector   _positionMenu;
   int       _nombreDeLignes;
   int       _nombreDeColonnes;
-  //    HERITER DE MENU
+  //    HÉRITÉ DE MENU
   int       _nombreDeBoutons;
-  //    PROPRE A BOUTON
+  //    PROPRE À BOUTON
   // Sa position
   float     _hauteurBouton;
   float     _largeurBouton;
@@ -402,11 +412,11 @@ class Button {
   // Son etat
   boolean   _activer;
   boolean   _selectionner;
-  // Pour les popup
+  // Pour les popups
   int       _text = 1;
 
 
-  // CÉER UN BOUTON SELON LES INFORMATION PASSÉES EN PARAMÈTRES
+  // CÉER UN BOUTON SELON LES INFORMATIONS PASSÉES EN PARAMÈTRES
   Button(int indiceDuLien, String typeDuLien, String nom, int positionDansLeMenu){
     _indiceDuLien       = indiceDuLien;
     _typeDuLien         = typeDuLien;
@@ -415,7 +425,7 @@ class Button {
     _positionMenu       = new PVector(1,1);
     _activer            = false;
   }
-  //    SETTER
+  //    SETTERS
   public void configHauteurMenu (float hauteurMenu){
     _HauteurMenu        = hauteurMenu;
   }
@@ -438,7 +448,7 @@ class Button {
     _text               = numerosDuPara;
   }
 
-  // RECALCULE LES DIMENTSION LA POSITION DANS LE MENU ET LA POSITION ABSOLU EN PIXEL
+  // RECALCULE LES DIMENTSIONS LA POSITION DANS LE MENU ET LA POSITION ABSOLU EN PIXEL
   public void recalculAttribut(){
     _hauteurBouton      = _HauteurMenu/_nombreDeLignes;
     _largeurBouton      = _largeurMenu/_nombreDeColonnes;
@@ -526,7 +536,7 @@ class Button {
     }
   }
 
-  // AFFICHE LE BOUTON QUAND IL EST ACTIVER
+  // AFFICHE LE BOUTON QUAND IL EST ACTIVÉ
   // niveau fait, ou variable en cours
   public void afficheBoutonActiver(){
     if (_indiceColonne<_nombreDeLignes){
@@ -558,7 +568,7 @@ class Button {
     }
   }
 
-  // VÉRIFIE SI LE BOUTON DOIT ÊTRE ACTIVER DANS L'ÉDITEUR
+  // VÉRIFIE SI LE BOUTON DOIT ÊTRE ACTIVÉ DANS L'ÉDITEUR
   public void activer(){
     switch (editeur.typeDElement){
       case "W":
@@ -676,7 +686,7 @@ class Editeur{
     _hauteur          =hauteur;
     _largeur          =largeur;
     _position         =position;
-    // PAramètre de base de l'éditeur lors de son ouverture
+    // Paramètre de base de l'éditeur lors de son ouverture
     _nombreDeLigne    = 1;
     _nombreDeColonne  = 2;
     _tempsDuNiveau    = 1000;
@@ -684,7 +694,7 @@ class Editeur{
     _plateau = new String[_nombreDeLigne][_nombreDeColonne];
     _plateau[0][0]="S";
     _plateau[0][1]="E";
-    // Emplacement et boite pour l'affichage des variable du niveau
+    // Emplacement et boite pour l'affichage des variables du niveau
     _variableDuNiveau[0] = new Boite( new PVector(width*0.9f,
                                                   height*0.5f-3*height*0.68f/8+1*height*0.68f/18),
                                       height*0.68f,///8,
@@ -721,12 +731,12 @@ class Editeur{
 
   // AFFICHAGE DE LA GRILLE DE FOND
   public void afficheGrille(){
-    // Calcule des dimention et les emplacemenet de chaque case en fonction des
-    // dimentions du plateau et de la position de l'éditaure ainsi que de ces dimentions
+    // Calcule des dimentions et les emplacements de chaque case en fonction des
+    // dimentions du plateau et de la position de l'éditeur ainsi que de ces dimentions
     float dimCasePixel = min(_largeur/_plateau[0].length,_hauteur/_plateau.length);
     PVector coinsSup = new PVector( _position.x-dimCasePixel/2*_plateau[0].length+dimCasePixel/2,
                                     _position.y-dimCasePixel/2*_plateau.length+dimCasePixel/2);
-    // Parcour le plateur
+    // Parcour le plateau
     for (int cetteLigne=0; cetteLigne<_plateau.length; cetteLigne++){
       for (int cetteColonne=0; cetteColonne<_plateau[cetteLigne].length; cetteColonne++){
         if (_plateau[cetteLigne][cetteColonne]!=null){
@@ -813,7 +823,7 @@ class Editeur{
               break;
           }
         }
-        // Remplie les case sans valeur
+        // Remplie les cases sans valeur
         else{
           _plateau[cetteLigne][cetteColonne]="0";
         }
@@ -821,7 +831,7 @@ class Editeur{
     }
   }
 
-  // ACTUALISE LE CONTENUE DES VARIABLES ET LES AFFICHES
+  // ACTUALISE LE CONTENUE DES VARIABLES ET LES AFFICHE
   public void afficheVariable(){
     _variableDuNiveau[0]._nom = str(_tempsDuNiveau);
     _variableDuNiveau[0].affiche();
@@ -850,7 +860,7 @@ class Editeur{
     }
   }
 
-  // RÉCUPÈRE LE NUMÉROS DE LIGNE ET DE COLONNE DE LA OU POINT LA SOURIE
+  // RÉCUPÈRE LE NUMÉRO DE LIGNE ET DE COLONNE DE LA OU POINTE LA SOURIE
   public void coordAIndice(){
 
     float dimCasePixel = min(_largeur/_plateau[0].length,_hauteur/_plateau.length);
@@ -892,7 +902,7 @@ class Editeur{
     }
   }
 
-  // CONVERTI LE TAB PLATEAU EN UN FICHIER TEXTE ET L'AJOUTEET FICHIER NIVEAU.TXT
+  // CONVERTI LE TAB PLATEAU EN UN FICHIER TEXTE ET L'AJOUTE AU FICHIER NIVEAU.TXT
   public void enregistre(){
     println("save");
     String[] fichierNiveauAvant = loadStrings("text/niveau.txt");
@@ -1024,10 +1034,10 @@ class Level {
     _position               = position;
     _hauteurBoite           = hauteur;
     _largeurBoite           = largeur;
-    // Calcule les Lignes et colonne depui le fichier texte
+    // Calcule les Lignes et colonnes depuis le fichier texte
     _nbDeLignes             = (contentOfLevel._lignesTexte.length-1);
     _nbDeColonnes           = split(contentOfLevel._lignesTexte[1], ' ').length;
-    // Determine les dimention pour que le cases soient toujours carré en fonciton des dim du niveau
+    // Determine les dimentions pour que les cases soient toujours carré en fonciton des dimmentions du niveau
     if (_largeurBoite/_nbDeColonnes<_hauteurBoite/_nbDeLignes) {
       // Si elle est en paysage
       _largeurCase          = _largeurBoite;
@@ -1059,7 +1069,7 @@ class Level {
   }
 
   Level(PVector position, float hauteur, float largeur){
-    // Pour le calcule du score
+    // Pour le calcul du score
     _tempsMax               = 0;
     _score                  = _tempsMax;
     _tempAuLancement        = -1;
@@ -1067,10 +1077,10 @@ class Level {
     _position               = position;
     _hauteurBoite           = hauteur;
     _largeurBoite           = largeur;
-    // Calcule les Lignes et colonne depui le fichier texte
+    // Calcule les Lignes et colonnes depuis le fichier texte
     _nbDeLignes             = 1;
     _nbDeColonnes           = 1;
-    // Determine les dimention pour que le cases soient toujours carré en fonciton des dim du niveau
+    // Determine les dimentions pour que les cases soient toujours carré en fonciton des dim du niveau
     if (_largeurBoite/_nbDeColonnes<_hauteurBoite/_nbDeLignes) {
       // Si elle est en paysage
       _largeurCase          = _largeurBoite;
@@ -1199,13 +1209,13 @@ class Menu {
   Button[]    _contenuDuMenu = new Button[0];
   int         _nbDeLignes;
   int         _nbDeColonnes;
-  // CRÉATION D'UN MENU EN FONCTION DU NOMBRE DE LIGNE ET DE COLONNES
+  // CRÉATION D'UN MENU EN FONCTION DU NOMBRE DE LIGNE ET DE COLONNE
   Menu(int nbDeLignes,int nbDeColonnes){
     _nbDeLignes   = nbDeLignes;
     _nbDeColonnes = nbDeColonnes;
   }
   // AJOUTE UN BOUTON
-  // Reparametre les varibles de chaque boutons (taille et pos) en fonciton du nombre de bouton dans le menu
+  // Reparamètre les variables de chaques boutons (taille et pos) en fonciton du nombre de bouton dans le menu
   public void ajoutBouton( int indiceDuLien,
                   String typeDuLien,
                   String nom,
@@ -1221,13 +1231,13 @@ class Menu {
   // ACTION DE CHAQUE BOUTON
   public void action() {
     for (int a=0;a<_contenuDuMenu.length;a++){
-      // Re regles les dimentions  des boutons en fontion de la boite dans laquel il sont
+      // Re règles les dimentions  des boutons en fontion de la boite dans laquel ils sont
       _contenuDuMenu[a].configHauteurMenu(_hauteur);
       _contenuDuMenu[a].configLargeurMenu(_largeur);
       _contenuDuMenu[a].configPositionMenu(_position);
       _contenuDuMenu[a].configNbDeLignesMenu(_nbDeLignes);
       _contenuDuMenu[a].configNbDeColonnesMenu(_nbDeColonnes);
-      // Re calcule tout les attribut d'un bouton comme lors de leur instanciation.
+      // Re calcule tout les attributs d'un bouton comme lors de leur instanciation.
       _contenuDuMenu[a].recalculAttribut();
       // Action au clique
       _contenuDuMenu[a].actionAuClique();
@@ -1249,13 +1259,13 @@ class Menu {
 
   public void affiche ( ) {
     for (int a=0;a<_contenuDuMenu.length;a++){
-      // Re regles les dimentions  des boutons en fontion de la boite dans laquel il sont
+      // Re règles les dimentions  des boutons en fontion de la boite dans laquel il sont
       _contenuDuMenu[a].configHauteurMenu(_hauteur);
       _contenuDuMenu[a].configLargeurMenu(_largeur);
       _contenuDuMenu[a].configPositionMenu(_position);
       _contenuDuMenu[a].configNbDeLignesMenu(_nbDeLignes);
       _contenuDuMenu[a].configNbDeColonnesMenu(_nbDeColonnes);
-      // Re calcule tout les attribut d'un bouton comme lors de leur instanciation.
+      // Re calcule tout les attributs d'un bouton comme lors de leur instanciation.
       _contenuDuMenu[a].recalculAttribut();
       // Affiche le bouton
       _contenuDuMenu[a].affiche();
@@ -1296,7 +1306,7 @@ class Page{
     _nom              = nom;
   }
 
-  // MÉTHODE D'AJJOUTE D'UNE BOITE
+  // MÉTHODE D'AJOUT D'UNE BOITE
   // En passant par la méthode configBoite de cette class
   public void ajoutBoite(int       hauteurBoitePrct,
                   int       largeurBoitePrct,
@@ -1321,9 +1331,9 @@ class Page{
   public void addPopups(int paragraphe, int vers, String var){
     _tableDePopup = (Popup[])append(_tableDePopup,new Popup(paragraphe, vers, var));
   }
-  // MÉTHODE QUI RETOURNE LES PARAMÈTRE DE CRÉATION D'UNE BOITE
-  // Elle convertie une position relative en pourcentage
-  // en position absolu en pixel
+  // MÉTHODE QUI RETOURNE LES PARAMÈTRES DE CRÉATION D'UNE BOITE
+  // Elle convertie une position relative en pourçentage
+  // en position absolue en pixel
   public Boite configBoite(  int hauteurBoitePrct,
                       int largeurBoitePrct,
                       int facteurPosX,
@@ -1355,7 +1365,7 @@ class Page{
     else {return false;}
   }
 
-  // CONFIGURE LA TAILLE D'UN TEXTE D'UNE BOITE D'ONT ON À LE NUMÉROS
+  // CONFIGURE LA TAILLE D'UN TEXTE D'UNE BOITE DONT ON À LE NUMÉROS
   public void configTailleTxt(float tailleTexte, int numeroDeBoite){
     _tableDeBoite[numeroDeBoite].configTailleTxt(tailleTexte);
   }
@@ -1405,7 +1415,7 @@ class Pers {
   float   _largeurNiveau;
   float   _hauteurNiveau;
   PVector _millieuxBoite;
-  // attribut conditionnel comme les position en déplacement ou celle de départ
+  // attribut conditionnel comme les positions en déplacement ou celle de départ
   int     _ligneDepart;
   int     _colonneDepart;
   float   _millieuxPersXDepart;
@@ -1438,13 +1448,13 @@ class Pers {
     _largeurNiveau          = largeurNiveau;
     _hauteurNiveau          = hauteurNiveau;
     _millieuxBoite          = millieuxBoite;
-    // calcule les attribut propre
+    // calcule les attributs propre
     _hauteurPers            = _hauteurNiveau/_ligneMax;
     _largeurPers            = _largeurNiveau/_colonneMax;
     _millieuxPersX          = indiceACoord(_colonne,_ligne)[0];
     _millieuxPersY          = indiceACoord(_colonne,_ligne)[1];
     _vitesseParCase         = 5;
-    // set les attribut conditionnel comme les position en déplacement ou celle de départ
+    // set les attributs conditionnel comme les positions en déplacement ou celle de départ
     _ligneDepart            = _ligne;
     _colonneDepart          = _colonne;
     _millieuxPersXDepart    = _millieuxPersX;
@@ -1471,7 +1481,7 @@ class Pers {
       _tempsAffichage       =millis();
       _millieuxPersX        = indiceACoord(_colonne,_ligne)[0];
       _millieuxPersY        = indiceACoord(_colonne,_ligne)[1];
-      // Calcule des position de dépoart et d'arrivé.
+      // Calcule des positions de départ et d'arrivé.
       _millieuxPersXDepart  = _millieuxPersX;
       _millieuxPersYDepart  = _millieuxPersY;
       _millieuxPersXFinal   = _millieuxPersX+_largeurPers*deltaColonne;
@@ -1487,7 +1497,7 @@ class Pers {
         _millieuxPersX >= _millieuxBoite.x+_largeurNiveau/2||
         _millieuxPersY <= _millieuxBoite.y-_hauteurNiveau/2||
         _millieuxPersY >= _millieuxBoite.y+_hauteurNiveau/2){
-      // Réinitialise les valeur de lignes et colonnes ainsi que les pos
+      // Réinitialise les valeurs de lignes et colonnes ainsi que les positions
       _ligne                = _ligneDepart;
       _colonne              = _colonneDepart;
       _millieuxPersX        = indiceACoord(_colonne,_ligne)[0];
@@ -1498,7 +1508,7 @@ class Pers {
       _millieuxPersYFinal   = indiceACoord(_colonne,_ligne)[1];
     }
   }
-  // Retourne un tabe de cordonné [PosX, PosY] en f de la ligne et de la colonne.
+  // Retourne une table de coordonnée [PosX, PosY] en f de la ligne et de la colonne.
   public float[] indiceACoord(int colonne, int ligne){
     float posX              = _millieuxBoite.x-_largeurNiveau/2+
                               _largeurPers/2+_largeurPers*colonne;
@@ -1507,22 +1517,22 @@ class Pers {
     float[] seraRetourner   = {posX, posY};
     return seraRetourner;
   }
-  // Retourne un tab de [colonne, ligne]
+  // Retourne une table de [colonne, ligne]
   public int[] position(){
     int[] seraRetourner     = {_colonne, _ligne};
     return seraRetourner;
   }
-  // Retourne un tab de coordoné [X, Y] de la position acctuel du perso
+  // Retourne une table de coordoné [X, Y] de la position acctuel du personnage
   public float[] getPosPixel(){
     float[] seraRetourner   = {_millieuxPersX,_millieuxPersY};
     return seraRetourner;
   }
-  // Retourne un tab [Colonne, ligne] de la position final perso
+  // Retourne une table [Colonne, ligne] de la position final du personnage
   public int[] getPosIndice(){
     int[] seraRetourner     = {_colonne,_ligne};
     return seraRetourner;
   }
-  // retourne true si le perso et à la position ou il doit etre a la fin de son glissement.
+  // retourne true si le personnage et à la position où il doit être à la fin de son glissement.
   public boolean seDeplace(){
     if (_millieuxPersXFinal == _millieuxPersX && _millieuxPersYFinal == _millieuxPersY){
       return true ;
@@ -1612,7 +1622,7 @@ class Score{
   public void range(){
     for (int a = 0 ;a<_hightScore.length;a++){
       int deltaAvance = 0;
-      int valeur = PApplet.parseInt(_hightScore[a]); // Prend le tab par la fin
+      int valeur = PApplet.parseInt(_hightScore[a]); // Prend la table par la fin
       for (int b = a; b>0 ; b--){
         int valeurSup = PApplet.parseInt(_hightScore[b-1]);
         if (valeur>valeurSup){
@@ -1801,7 +1811,7 @@ class Popup {
   int             _envoieVers;
   boolean         _retour;
 
-  // CRÉATION D'UNE POPUP EN FONCTION DU TEXTE DEDANS ET DE CE QU'ELLE FAIT COMME ACTION
+  // CRÉATION D'UNE POPUP EN FONCTION DU TEXTE CONTENUE EN ELLE ET DE CE QU'ELLE FAIT COMME ACTION
   Popup(int paragraphe, int vers, String var){
     // Variable modifié par la boite de texte de la popup
     _variableAffecter     = var;
@@ -1821,7 +1831,7 @@ class Popup {
     fill(ROUGE,200);
     stroke(BLANC);
     rect(_positionPopupX,_positionPopupY,_dimentionPopupX,_dimentionPopupY);
-    // Fenêtre de frape
+    // Fenêtre de frappe
     PVector positionDeLaFenetreDeFrappe = new PVector(_positionPopupX,_positionPopupY+_dimentionPopupY/6);
     rectMode(CENTER);
     fill(NOIR);
@@ -1856,7 +1866,7 @@ class Popup {
     _menuPopup.configLargeur(_dimentionPopupX);
     _menuPopup.configPosition(new PVector(_positionPopupX,_positionPopupY+2*_dimentionPopupY/5));
     _menuPopup.action();
-    // Action de s inputs calvier.
+    // Action des inputs calvier.
     if (keyPressed){
       switch (key){
         case BACKSPACE:
@@ -1888,7 +1898,7 @@ class Popup {
     }
   }
 
-  // MODIFIE DES VARIABLES
+  // MODIFICATION DE LA VARIABLE SÉLECTIONNÉ
   public void variableEdit(){
     switch (_variableAffecter){
       case "Niveau":
@@ -1909,7 +1919,7 @@ class Popup {
 }
   public void settings() {  size(1000,800); }
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "Projet_V3" };
+    String[] appletArgs = new String[] { "programme_Main" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {
