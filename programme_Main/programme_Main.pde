@@ -84,13 +84,12 @@ void setup(){
   tableMenu[7] = new Menu(1,5); //Footer éditeur
     tableMenu[7].ajoutBouton(4,    "POPUP",    "Joke",   0);
     tableMenu[7].ajoutBouton(4,    "POPUP",    "Effacer",   1);
-    tableMenu[7].ajoutBouton(4,    "POPUP",    "Tester",    2);
     tableMenu[7].ajoutBouton(4,    "POPUP",    "Sauver",    3);
     tableMenu[7].ajoutBouton(0,    "POPUP",    "Retour",    4);
     tableMenu[7].configPopup(0,6);
     tableMenu[7].configPopup(1,7);
-    tableMenu[7].configPopup(3,8);
-    tableMenu[7].configPopup(4,9);
+    tableMenu[7].configPopup(2,8);
+    tableMenu[7].configPopup(3,9);
   //    CRÉATION DES PAGES
   tablePage[0] = new Page("Accueil");
     //                      hauteur, largeur,PosX, PosY, typeDeContenu, pointeur,Identité, Contour
@@ -119,7 +118,7 @@ void setup(){
     tablePage[2].configTailleTxt (tailleTexte2,0);
     //                            Taille       indice de numeroDeBoite.
     tablePage[2].configTailleTxt (tailleTexte2,1);
-  tablePage[3] = new Page("Au secoure");
+  tablePage[3] = new Page("AU SECOURS");
     //                      hauteur, largeur,PosX, PosY, typeDeContenu, pointeur,Identité, Contour
     tablePage[3].ajoutBoite(12,      60 ,    50,   10,   "NOM",         0,       0,        true);
     tablePage[3].ajoutBoite(60,      100,    50,   50,   "TEXTE",       4,       0,        false);

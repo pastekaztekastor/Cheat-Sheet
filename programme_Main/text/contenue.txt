@@ -1,45 +1,52 @@
 paragraphe 1
-Sheet Cheat
+CHEAT SHEET
 paragraphe 2
 paragraphe 4
-Ceci est la page d'aide
-donc pour comprendre comme se fout le jeux il suffit
-de suivre les niveaux. Mais pour ceux qui auraient la
-flemme de tout lire ou de jouer dans l'ordre voici
-ce qu'il faut savoir
+Bienvenue dans le menu d'aide de CHEAT SHEET
 
-Sert toi des fleche de tout clavier pour aider Mathurin
-az trouver des antiseche dans son salon !
+BUT DU JEU:
+Le but de ce jeu est d'atteindre la fin de chaque niveaux
+avant la fin du temps imparti.
 
-Prend grad au temps qui defile ! si tu arrive en retard
-a ton partiel tu aura 0 poiter
+Plus vous terminerai le niveau vite
+plus votre score sera élevé.
 
-Certain item comme le chat ou les cours de fera perde des
-points ou te feront allez moins vite
+CONTROLE:
+Vous pourrez vous déplacer à l'aide des flèches directionnelles
+de votre clavier.
+/!\ Une petite touche secrète permet de finir
+certain niveau beaucoup plus vite!!
 
-Par contre la cafer et les anti seche c'est bien. ramasse
-les tous
+FONCTIONNEMENT DE L'ÉDITEUR:
+Voici quelques règles à respecter pour réaliser des niveaux jouables:
+-Le niveau doit comporter uniquement un seul DÉBUT et une seule FIN
+-On ne peut créer qu'un seul niveau par session,pour créer
+un niveau supplémentaire il faudra relancer le jeu.
 
-Good luck camarade tricheur !
+Good luck camarade!
 paragraphe 5
-Merci a moi meme pout commencer et a tout les café
-gentilemment servient par ma copine.
+Merci à moi-même pour commencer et à tous les cafés
+gentiment servis par ma copine.
 
-Merci a Paul Leborgne, mon meilleur amis pour les idées
-et pour de design de certain niveaux.
+Merci à Paul Le Borgne , mon meilleur ami pour les idées
+et pour le design de certains niveaux. (/O_O)/
 
-Merci a mon chat pour le soutient moral
+Merci à mon chat pour le soutient moral. (=^I^=)
 
-Merci au cafe pour m'avoir donner de l'energie
+Merci au café pour l’énergie apporté lors de mes nombreuses nuits blanches
+(>_<)'
 
-Merci a la faculter de limoge pour m'avoir accepter
-malgrer mon parcour douteux et de m'avoir donner la
-chance de pouvoir reprendre mes etudes la ou j'ai eu
-la betises de les arreter
+Merci à Git pour avoir sauvé mes fesses lors de crashs inopinés
+(comme la veille de la date limite T_T )
 
-Merci a vous qui jouez a ce jeux (pas ouf) en esperant
-qu'il vous plait et que vous vous amuser.
+Merci à la faculté de Limoges pour m'avoir accepté
+malgré mon parcours douteux et de m'avoir donné la
+chance de pouvoir reprendre mes études là où j'ai eu
+la bêtise de les arrêter
+
+Merci à vous qui jouez a ce jeux (pas ouf) en espérant
+qu'il vous plaise et que vous vous amusiez.
 paragraphe 6
 Merci de bien vouloir rentrer votre nom pour les scores
-et d'appuyer sur ENTRER (pas de retour arriere possible)
+et d'appuyer sur ENTRER (pas de retour arrière possible)
 paragraphe 7
