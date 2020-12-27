@@ -48,6 +48,9 @@ class Boite{
       case "NOM":
       afficheNom();
       break;
+      case "NOMNIVEAU":
+      afficheNomNiveau();
+      break;
       case "SCORE":
       afficheScore();
       break;
@@ -59,7 +62,7 @@ class Boite{
     }
   }
 
-  // LES SETTER
+  // LES SETTERS
   void config(String typeDeContenu,int indiceDuContenu){
     _typeDeContenu    = typeDeContenu;
     _indiceDuContenu  = indiceDuContenu;
@@ -78,7 +81,7 @@ class Boite{
     _typeDeContenu    = typeDeContenu;
   }
 
-  // LES AFFICHAGE
+  // LES AFFICHAGES
   void afficheContour(){
     if (_afficheContour){
       stroke(ROUGE);
@@ -113,6 +116,13 @@ class Boite{
     textSize(_tailleTexte);
     text(_nom,_positionMilieux.x,_positionMilieux.y);
   }
+  void afficheNomNiveau(){
+    textAlign(CENTER, CENTER);
+    fill(BLANC);
+    textSize(_tailleTexte);
+    int numeroDuNiveau = niveauEnCoursDaffichage+1;
+    text(_nom+" "+numeroDuNiveau,_positionMilieux.x,_positionMilieux.y);
+  }
   void afficheScore(){
     textAlign(CENTER, CENTER);
     fill(BLANC);
@@ -129,7 +139,7 @@ class Boite{
     editeur.affiche();
   }
 
-  // LES ACTION
+  // LES ACTIONS
   void action(){
     if (_typeDeContenu == "MENU")  {tableMenu[_indiceDuContenu].action();}
     if (_typeDeContenu == "NIVEAU"){tableNiveau[niveauEnCoursDaffichage].action();}

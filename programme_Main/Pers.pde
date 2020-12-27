@@ -13,7 +13,7 @@ class Pers {
   float   _largeurNiveau;
   float   _hauteurNiveau;
   PVector _millieuxBoite;
-  // attribut conditionnel comme les position en déplacement ou celle de départ
+  // attribut conditionnel comme les positions en déplacement ou celle de départ
   int     _ligneDepart;
   int     _colonneDepart;
   float   _millieuxPersXDepart;
@@ -46,13 +46,13 @@ class Pers {
     _largeurNiveau          = largeurNiveau;
     _hauteurNiveau          = hauteurNiveau;
     _millieuxBoite          = millieuxBoite;
-    // calcule les attribut propre
+    // calcule les attributs propre
     _hauteurPers            = _hauteurNiveau/_ligneMax;
     _largeurPers            = _largeurNiveau/_colonneMax;
     _millieuxPersX          = indiceACoord(_colonne,_ligne)[0];
     _millieuxPersY          = indiceACoord(_colonne,_ligne)[1];
     _vitesseParCase         = 5;
-    // set les attribut conditionnel comme les position en déplacement ou celle de départ
+    // set les attributs conditionnel comme les positions en déplacement ou celle de départ
     _ligneDepart            = _ligne;
     _colonneDepart          = _colonne;
     _millieuxPersXDepart    = _millieuxPersX;
@@ -79,7 +79,7 @@ class Pers {
       _tempsAffichage       =millis();
       _millieuxPersX        = indiceACoord(_colonne,_ligne)[0];
       _millieuxPersY        = indiceACoord(_colonne,_ligne)[1];
-      // Calcule des position de dépoart et d'arrivé.
+      // Calcule des positions de départ et d'arrivé.
       _millieuxPersXDepart  = _millieuxPersX;
       _millieuxPersYDepart  = _millieuxPersY;
       _millieuxPersXFinal   = _millieuxPersX+_largeurPers*deltaColonne;
@@ -95,7 +95,7 @@ class Pers {
         _millieuxPersX >= _millieuxBoite.x+_largeurNiveau/2||
         _millieuxPersY <= _millieuxBoite.y-_hauteurNiveau/2||
         _millieuxPersY >= _millieuxBoite.y+_hauteurNiveau/2){
-      // Réinitialise les valeur de lignes et colonnes ainsi que les pos
+      // Réinitialise les valeurs de lignes et colonnes ainsi que les positions
       _ligne                = _ligneDepart;
       _colonne              = _colonneDepart;
       _millieuxPersX        = indiceACoord(_colonne,_ligne)[0];
@@ -106,7 +106,7 @@ class Pers {
       _millieuxPersYFinal   = indiceACoord(_colonne,_ligne)[1];
     }
   }
-  // Retourne un tabe de cordonné [PosX, PosY] en f de la ligne et de la colonne.
+  // Retourne une table de coordonnée [PosX, PosY] en f de la ligne et de la colonne.
   float[] indiceACoord(int colonne, int ligne){
     float posX              = _millieuxBoite.x-_largeurNiveau/2+
                               _largeurPers/2+_largeurPers*colonne;
@@ -115,22 +115,22 @@ class Pers {
     float[] seraRetourner   = {posX, posY};
     return seraRetourner;
   }
-  // Retourne un tab de [colonne, ligne]
+  // Retourne une table de [colonne, ligne]
   int[] position(){
     int[] seraRetourner     = {_colonne, _ligne};
     return seraRetourner;
   }
-  // Retourne un tab de coordoné [X, Y] de la position acctuel du perso
+  // Retourne une table de coordoné [X, Y] de la position acctuel du personnage
   float[] getPosPixel(){
     float[] seraRetourner   = {_millieuxPersX,_millieuxPersY};
     return seraRetourner;
   }
-  // Retourne un tab [Colonne, ligne] de la position final perso
+  // Retourne une table [Colonne, ligne] de la position final du personnage
   int[] getPosIndice(){
     int[] seraRetourner     = {_colonne,_ligne};
     return seraRetourner;
   }
-  // retourne true si le perso et à la position ou il doit etre a la fin de son glissement.
+  // retourne true si le personnage et à la position où il doit être à la fin de son glissement.
   boolean seDeplace(){
     if (_millieuxPersXFinal == _millieuxPersX && _millieuxPersYFinal == _millieuxPersY){
       return true ;

@@ -3,7 +3,7 @@
  // |  _ \  / _ \ | | | || __|/ _ \ | '_ \
  // | |_) || (_) || |_| || |_| (_) || | | |
  // |____/  \___/  \__,_| \__|\___/ |_| |_|
- // 
+ //
 
 class Button {
   //    RECUPERER DE MENU
@@ -12,9 +12,9 @@ class Button {
   PVector   _positionMenu;
   int       _nombreDeLignes;
   int       _nombreDeColonnes;
-  //    HERITER DE MENU
+  //    HÉRITÉ DE MENU
   int       _nombreDeBoutons;
-  //    PROPRE A BOUTON
+  //    PROPRE À BOUTON
   // Sa position
   float     _hauteurBouton;
   float     _largeurBouton;
@@ -29,11 +29,11 @@ class Button {
   // Son etat
   boolean   _activer;
   boolean   _selectionner;
-  // Pour les popup
+  // Pour les popups
   int       _text = 1;
 
 
-  // CÉER UN BOUTON SELON LES INFORMATION PASSÉES EN PARAMÈTRES
+  // CÉER UN BOUTON SELON LES INFORMATIONS PASSÉES EN PARAMÈTRES
   Button(int indiceDuLien, String typeDuLien, String nom, int positionDansLeMenu){
     _indiceDuLien       = indiceDuLien;
     _typeDuLien         = typeDuLien;
@@ -42,7 +42,7 @@ class Button {
     _positionMenu       = new PVector(1,1);
     _activer            = false;
   }
-  //    SETTER
+  //    SETTERS
   void configHauteurMenu (float hauteurMenu){
     _HauteurMenu        = hauteurMenu;
   }
@@ -65,7 +65,7 @@ class Button {
     _text               = numerosDuPara;
   }
 
-  // RECALCULE LES DIMENTSION LA POSITION DANS LE MENU ET LA POSITION ABSOLU EN PIXEL
+  // RECALCULE LES DIMENTSIONS LA POSITION DANS LE MENU ET LA POSITION ABSOLU EN PIXEL
   void recalculAttribut(){
     _hauteurBouton      = _HauteurMenu/_nombreDeLignes;
     _largeurBouton      = _largeurMenu/_nombreDeColonnes;
@@ -153,7 +153,7 @@ class Button {
     }
   }
 
-  // AFFICHE LE BOUTON QUAND IL EST ACTIVER
+  // AFFICHE LE BOUTON QUAND IL EST ACTIVÉ
   // niveau fait, ou variable en cours
   void afficheBoutonActiver(){
     if (_indiceColonne<_nombreDeLignes){
@@ -185,7 +185,7 @@ class Button {
     }
   }
 
-  // VÉRIFIE SI LE BOUTON DOIT ÊTRE ACTIVER DANS L'ÉDITEUR
+  // VÉRIFIE SI LE BOUTON DOIT ÊTRE ACTIVÉ DANS L'ÉDITEUR
   void activer(){
     switch (editeur.typeDElement){
       case "W":

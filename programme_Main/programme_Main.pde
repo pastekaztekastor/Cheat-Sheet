@@ -5,7 +5,7 @@
  // |____/ |_| |_| \___| \___| \__|  \___||_| |_| \___| \__,_| \__|
  //
 
-  //    DECLARATION DES VARIABLES GLOBALES
+  //    DÉCLARATION DES VARIABLES GLOBALES
 final float margeDesBoite                   = 20;
 final float epaisseurDesBordures            = 0.008;
 final float tailleTexte1                    = min(width,height)*0.20;
@@ -31,7 +31,7 @@ int     scoreDuJoueur                       = 0;
 String  tamponDuPopup                       = "";
 Score   score;
 
-//    DECLARATION DES TABLE D'OBJETS
+//    DECLARATION DES TABLES D'OBJETS
 Page[] tablePage                            = new Page[8];
 Menu[] tableMenu                            = new Menu[8];
 Text[] tableTexte                           = new Text[5];
@@ -44,7 +44,7 @@ void setup(){
   PFont font;
   font = loadFont("FORCED_SQUARE-50.vlw");
   textFont(font, 30);
-  //    CREATION DES OBJET TEXTES
+  //    CREATION DES OBJETS TEXTES
   tableTexte[0] = new Text("contenue");
   tableTexte[1] = new Text("niveau");
   tableTexte[2] = new Text("score");
@@ -63,11 +63,11 @@ void setup(){
   tableMenu[1] = new Menu(1,4); //Footer 1
     tableMenu[1].ajoutBouton(-1,   "PAGE",     "Quitter",   1);
     tableMenu[1].ajoutBouton(0,    "PAGE",     "Accueil",   2);
-  tableMenu[3] = new Menu(1,3); //Footeur game
+  tableMenu[3] = new Menu(1,3); //Footer game
     tableMenu[3].ajoutBouton(0,    "recharge", "Recharger", 0);
     tableMenu[3].ajoutBouton(1,    "PAGE",     "Retour",    1);
     tableMenu[3].ajoutBouton(0,    "PAGE",     "Accueil",   2);
-  tableMenu[4] = new Menu(1,3); //Footeur game
+  tableMenu[4] = new Menu(1,3); //Footer game
     tableMenu[4].ajoutBouton(0,    "PAGE",     "Retour",    1);
   tableMenu[5] = new Menu(5,1); //Coté gauche Editeur
     tableMenu[5].ajoutBouton(1,    "ETAT",     "Vide",      0);
@@ -81,8 +81,8 @@ void setup(){
     tableMenu[6].configPopup(0,4);
     tableMenu[6].configPopup(1,2);
     tableMenu[6].configPopup(2,3);
-  tableMenu[7] = new Menu(1,5); //Footeur éditeur
-    tableMenu[7].ajoutBouton(4,    "POPUP",    "Charger",   0);
+  tableMenu[7] = new Menu(1,5); //Footer éditeur
+    tableMenu[7].ajoutBouton(4,    "POPUP",    "Joke",   0);
     tableMenu[7].ajoutBouton(4,    "POPUP",    "Effacer",   1);
     tableMenu[7].ajoutBouton(4,    "POPUP",    "Tester",    2);
     tableMenu[7].ajoutBouton(4,    "POPUP",    "Sauver",    3);
@@ -91,7 +91,7 @@ void setup(){
     tableMenu[7].configPopup(1,7);
     tableMenu[7].configPopup(3,8);
     tableMenu[7].configPopup(4,9);
-  //    CREATION DES PAGES
+  //    CRÉATION DES PAGES
   tablePage[0] = new Page("Accueil");
     //                      hauteur, largeur,PosX, PosY, typeDeContenu, pointeur,Identité, Contour
     tablePage[0].ajoutBoite(30,      60,     50,   15,   "TEXTE",       1,       0,        false);
@@ -148,14 +148,14 @@ void setup(){
     tablePage[5].configTailleTxt (tailleTexte2,0);
   tablePage[6] = new Page("Niveau");
     //                      hauteur, largeur,PosX, PosY, typeDeContenu, pointeur,Identité, Contour
-    tablePage[6].ajoutBoite(12,      60 ,    50,   10,   "NOM",         0,       0,        true);
+    tablePage[6].ajoutBoite(12,      60 ,    50,   10,   "NOMNIVEAU",   0,       0,        true);
     tablePage[6].ajoutBoite(12,      20 ,    90,   10,   "VARIABLE",    0,       0,        true);
     tablePage[6].ajoutBoite(60,      100,    50,   50,   "NIVEAU",      0,       0,        false);
     tablePage[6].ajoutBoite(12,      60 ,    50,   90,   "MENU",        3,       0,        true);
     tablePage[6].ajoutBoite( 6,      20 ,    10,   13,   "VARIABLE",    0,       1,        true);
     tablePage[6].ajoutBoite( 6,      20 ,    10,    7,   "SCORE",       3,       0,        true);
     // Ajoute des boutons dans le menu en fonciton du nombre de niveaux.
-    tableMenu[2] = new Menu(4,4); //Choix des Niveau
+    tableMenu[2] = new Menu(4,4); //Choix des Niveaux
     for (int a = 0; a<tableTexte[1].compte("LVL")-1;a++){
       int indice = a+1;
       tableMenu[2].ajoutBouton(a,      "level",    "Lvl "+indice, a);
@@ -182,7 +182,7 @@ void draw() {
   }
   // Calcule de la variable temporel
   uniteDeTemps = (millis())/10;
-  // Affichage des elements de l'écran
+  // Affichage des éléments de l'écran
   background(NOIR);
   tablePage[pageEnCoursDaffichage].affiche();
 }

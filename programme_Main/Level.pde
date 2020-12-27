@@ -38,10 +38,10 @@ class Level {
     _position               = position;
     _hauteurBoite           = hauteur;
     _largeurBoite           = largeur;
-    // Calcule les Lignes et colonne depui le fichier texte
+    // Calcule les Lignes et colonnes depuis le fichier texte
     _nbDeLignes             = (contentOfLevel._lignesTexte.length-1);
     _nbDeColonnes           = split(contentOfLevel._lignesTexte[1], ' ').length;
-    // Determine les dimention pour que le cases soient toujours carré en fonciton des dim du niveau
+    // Determine les dimentions pour que les cases soient toujours carré en fonciton des dimmentions du niveau
     if (_largeurBoite/_nbDeColonnes<_hauteurBoite/_nbDeLignes) {
       // Si elle est en paysage
       _largeurCase          = _largeurBoite;
@@ -73,7 +73,7 @@ class Level {
   }
 
   Level(PVector position, float hauteur, float largeur){
-    // Pour le calcule du score
+    // Pour le calcul du score
     _tempsMax               = 0;
     _score                  = _tempsMax;
     _tempAuLancement        = -1;
@@ -81,10 +81,10 @@ class Level {
     _position               = position;
     _hauteurBoite           = hauteur;
     _largeurBoite           = largeur;
-    // Calcule les Lignes et colonne depui le fichier texte
+    // Calcule les Lignes et colonnes depuis le fichier texte
     _nbDeLignes             = 1;
     _nbDeColonnes           = 1;
-    // Determine les dimention pour que le cases soient toujours carré en fonciton des dim du niveau
+    // Determine les dimentions pour que les cases soient toujours carré en fonciton des dim du niveau
     if (_largeurBoite/_nbDeColonnes<_hauteurBoite/_nbDeLignes) {
       // Si elle est en paysage
       _largeurCase          = _largeurBoite;
