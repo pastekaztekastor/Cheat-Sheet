@@ -1,0 +1,195 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{calc}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\usepackage{color}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{  
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+
+\lstset{style=mystyle}
+ 
+
+\def\LRA{\Leftrightarrow\mkern40mu}
+
+\geometry{hmargin=2.5cm,vmargin=2cm}
+
+\author{Cartron Mathurin \& Ciadoux Pierre}
+\title{Compte Rendu du projet d'informatique 3 TC}
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+%\lstlistoflistings
+\newpage
+
+\section{Contrôles sanitaires}
+La question 1 n'étant que de renommer le document, je ne vais pas m'étendre dessus et passer tout de suite à la question 2. 
+\subsection{Question 2}
+Ici il est question de faire un filtre du tableau pour n'en garder que les informations concernant la ville de Limoges. Pour ce faire nous avons commencé par créer un onglet temporaire dans lequel nous avons dupliqué la base de données. Par la suite nous avons trié les données en sélectionnant tout le tableau puis en y appliquant un filtre en suivant ces étapes : \\
+\verb| Menu Données -> Plus de filtres -> Filtre standard| \\
+Ce qui nous ouvre la figure \ref{fig1}. Nous y mettons les paramètres comme dans la capture pour ne garder que les lignes concernant Limoges. Cependant cette méthode ne se contente que de "masquer" les lignes qui ne contiennent pas Limoges donc le tableau contient encore toute les données (comme le laisse penser les numéros de lignes qui ne sont pas continus - Figure \ref{fig2}) Mais un simple copier/coller de ce tableau règle ce problème. 
+\begin{figure}[!h]
+  \centering
+   \includegraphics[width=0.8\linewidth]{1.PNG}
+  \caption{Fenêtre de paramétrage du filtre}
+  \label{fig1}
+\end{figure}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\linewidth]{2.PNG}
+  \caption{Non suivi des numéros de lignes}
+  \label{fig2}
+\caption{Question 2 de l'exercice 1}
+\end{figure}
+
+\subsection{Quesiton 3}
+Le réponse à cette question n'est pas bien différente de la question précédente cependant il y a plusieurs manières de procéder. 
+\begin{itemize}
+\item Partir du tableau ne contenant que les établissement de Limoges faire la même méthode que précédemment
+\item Repartir du tableau temporaire de la question précédente pour y ajouter un filtre. 
+\end{itemize}
+
+\section{Sur les traces des poilus}
+
+\subsection{Question 1}
+Après avoir crée un colonne année de naissance sur la colonne R nous y avons mis la formule suivante\\
+\verb|=SIERREUR(SI(CNUM(STXT(C2;19;4))>0;CNUM(STXT(C2;19;4));CNUM(STXT(C2;13;4)));"")|\\
+Rien de bien compliqué rassurez-vous. Premièrement il faut remarquer que la date n'est pas toujours au même endroit, voire manquante. Il faut donc retourner les caractères de la colonne C soit du caractère 19 à 23 si la date comporte le mois et le jours, sinon du caractère 13 à 17. De plus quand nous n'avons pas la date il ne faut rien retourner. La fonction \textit{STXT} sert à retourner un morceau d'un chaîne de caractères, et la fonction \textit{CNUM} transforme une chaîne de caractères en nombre si ce ne sont que des chiffres. Et \textit{SIERREUR} retourne le paramètre sauf si il y a une erreur. Donc, si nous lisons la formule cela donne : si le contenu de la colonne C du caractère 19 au caractère 23 est supérieur à 0 (donc c'est un nombre) alors je l'affiche, sinon j'affiche le nombre du caractère 13 au caractère 17 de la même case. Si ce n'est pas possible (car se sont des lettres, ça retourne une erreur) je n'affiche rien. 
+
+\subsection{Question 2}
+Pour cette question je ne vais pas réexpliquer ce qui découle de la question précédente, et la formule et la suivante. Car seule la condition à changé. \\
+\verb|=SIERREUR(SI(ET(CNUM(STXT(J2;7;4))>=1910;CNUM(STXT(J2;7;4))<=1920);CNUM(STXT(J2;7;4));"");"")|\\
+La seule différence et que nous testons si la date est supérieur ou égale à 1910 grâce à  \verb|(CNUM(STXT(J2;7;4))>=1910| et inférieur ou égale à 1920 grâce à \verb|CNUM(STXT(J2;7;4))<=1920|.
+
+\subsection{Question 3}
+Ici rien de bien dur, si nous avons une date de naissance et une date de mort nous affichons la différence des deux. \verb|=SI(ET(R2<>"";S2<>"");S2-R2;"")|.
+
+\subsection{Question 4}
+Pour ce qui est de cette question nous avons fais le choix de nous aider d'une feuille de calcul intermédiaire qui ne retourne que les soldats morts pendant la guerre. 
+\subsubsection{La moyenne d'âge, la médiane et les 1er et 3em quartile des soldat morts}
+Ainsi les calculs à effectuer sur la moyenne d'age et les autres opérations sont simples, par exemple : \\
+\verb|=MOYENNE($'morts 14-18'.T2:T10795)| retourne la moyenne de la case T2 à la case T10795 de la feuille tampon. Le fonctionnement est le même pour la médiane \verb|=MEDIANE($'morts 14-18'.T2:T10795)| , ainsi que pour les quartiles. A noter qu'il faut aussi dire si l'on désire le premier ou le troisième dans les paramètre de la fonction. \\ 
+\verb|=QUARTILE($'morts 14-18'.T2:T10795;1)| et \\ 
+\verb|=QUARTILE($'morts 14-18'.T2:T10795;3)|.
+\subsubsection{Age le plus vieux et le plus jeune}
+Même chose que pour les explication précédentes, si ce n'est la fonction qui change : \\ \verb|=MIN($'morts 14-18'.T2:T10795)| et \verb|=MAX($'morts 14-18'.T2:T10795)|.
+\subsection{Question 5}
+Pour ce qui est de ce pourcentage, nous avons d'abord commencé par calculer le nombre de soldats morts à Verdun et le nombre de soldats morts pendant la première guerre puis nous avons fais un ratio des deux. Pour ce qui est du compte des morts à Verdun il nous suffit de compter tout les morts si la case de lieu de décès est "Verdun", et pour tout les mort nous comptons le nombre de lignes tu tableau temporaire. 
+
+\section{Les lauréat du prix Nobel}
+\subsection{Question 1}
+Pour cette question il fallait de faire un tableau dynamique dont la configuration est en figure \ref{fig4a} de la plage de données pour mettre en filtre le genre et nous obtenions ceci : figure \ref{fig4b}.
+\begin{figure}[!h]
+\begin{subfigure}{.4\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{3.PNG}
+  \caption{La configuration de la table}
+  \label{fig4a}
+\end{subfigure}
+\begin{subfigure}{.6\textwidth}
+  \centering
+  \includegraphics[width=0.9\linewidth]{4.PNG}
+  \caption{Le résultat}
+  \label{fig4b}
+\end{subfigure}
+\caption{Question 1 de l’exercice 3}
+\end{figure}
+\subsection{Question 2}
+Même mode opératoire que pour la question précédente sauf que nous mettons "Nombre" au lieux de "Somme" dans la formule du champs de données, et que comme nous avons mis "Données" en champs de colonne il nous est possible de filtrer les \textit{country} nous ne gardons donc que "France" et "Alsace" qui est la seule avec \textit{then Germany, now France}. 
+\subsection{Question 3}
+Selon le diagramme de l'énoncé il nous faudra comme lignes : physics, peace, medicine, literature, economics, chemistry. Et en colonne : org, male, female. En sachant ça nous pouvons donc paramétrer notre tableau dynamique comme suivant (figure \ref{5a}). Mais pour n'avoir que les disciplines souhaitées il nous faut faire un tri sur les lignes comme le montre la capture d'écran \ref{5b} . Comme nous n'avons plus que les genres demandés une fois ce premier tri effectué nous n'avons pas besoin d'en faire un autre sur les genres.
+\begin{figure}[!h]
+\begin{subfigure}{.6\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{5.PNG}
+  \caption{La configuration de la table}
+  \label{5a}
+\end{subfigure}
+\begin{subfigure}{.4\textwidth}
+  \centering
+  \includegraphics[width=0.9\linewidth]{6.PNG}
+  \caption{Le filtre sur les disciplines}
+  \label{5b}
+\end{subfigure}
+\caption{Question 3 de l'exercice 3}
+\end{figure}
+Pour ce qui est du graphique il suffit de cliquer sur la table précédemment créé, de cliquer sur l'icone \textit{Insérer un diagramme} de sélectionner le type \textit{barre} et c'est tout. Laissez le logiciel faire le reste. 
+\subsection{Question 4}
+Pour retourner l'âge d’obtention du Nobel si c'est possible nous avons cette formule :\\
+\verb|=SIERREUR(SI(CNUM(STXT(D2;1;4))<>0;CNUM(M2)-CNUM(STXT(D2;1;4));|\\\verb|"Date de naissance manquante");"Erreur de date")| \\
+qui est bien trop longue pour être expliquée en un seul morceau.
+\paragraph{}\verb|SI(CNUM(STXT(D2;1;4))<>0| Sert à vérifier que l'année de naissance est correcte, que c'est bien un nombre, et qu'il est différent de 0.
+\paragraph{}\verb|CNUM(M2)-CNUM(STXT(D2;1;4))|Si c'est le cas alors nous calculons la colonne M moins la dite année. 
+\paragraph{}\verb|"Date de naissance manquante")|Si la date n'est pas différent de 0 nous affichons ce qu'il y a entre les guillemets. 
+\paragraph{}\verb|"Erreur de date"| Comme nous avons utilisé un \textit{SIERREUR} au début, si la première condition retourne une erreur, car la présumée date ne contient pas que des chiffres, alors nous écrivons ce qu'il y a entre les guillemets.
+\subsection{Question 5}
+Pour calculer l'âge moyen des prix Nobel il suffit de faire la moyenne de la colonne P.
+
+\section{Un problème de brasseur}
+Pour la création du tableau voici ce que nous avons fait (figure \ref{fig6}). Toutes les case de la case A1 à la case E8 sont des constantes. Pour ce qui est du calcul des autres se sont de simple formules telle que des sommes ou des soustractions. Nous calculons les stock restants en fonction du nombre de packs vendus et du nombre de bières de chaque type par pack. La plus grosse partie du travail consistait à utiliser le solveur comme le montre les captures suivantes. En, effet nous commençons par indiquer quelle cellule nous voulons maximiser car la consigne est de trouver quelle combinaison rapport le plus d'argent. Puis nous indiquons quelles cellules nous voulons manipuler pour faire varier le résultat. Pour finir nous fixons des règles pour ne pas avoir de résultats incohérents. Ici nous précisons que le nombre de packs vendus ne peux pas être négatif. Sans ça il aurais "acheté" des pack de bière pour remplir les stocks. 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\linewidth]{7.PNG}
+  \caption{Tableau de l'exercice 4}
+  \label{fig6}
+\end{figure}
+
+\begin{figure}[!h]
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{8.PNG}
+  \caption{Configuration du solveur}
+  \label{fig6a}
+\end{subfigure}
+\begin{subfigure}{.55\textwidth}
+  \centering
+  \includegraphics[width=0.9\linewidth]{9.PNG}
+  \caption{Option de la configuration pour avoir des résultat sans virgules}
+  \label{fig6b}
+\end{subfigure}
+\caption{Le solveur}
+\label{fig7}
+\end{figure}
+
+\section{Conclusion}
+Nous avons passés environ trois heures sur les feuilles calc et pareil pour le compte rendu, la difficulté a été pour les feuilles calc dans l'exercice 2 surtout avec les formules un peu complexes pour récupérer les bonnes dates ainsi que le fait de préparer une seconde feuille avec seulement les données des soldats morts lors de la première Guerre Mondiale. Le compte rendu à été un peu long à faire et un peu plus compliqué à faire en étant à distance, en appel vocal seulement. Nous avons fait la totalité du travail en appel, mais on peut dire que la répartition est d'environ deux tiers des feuilles calc faites par Pierre et deux tiers du compte rendu fait par Mathurin, avec le tiers restant pour l'autre. Le fait de bien savoir faire des diagrammes ou utiliser le solveur nous servira très probablement dans le monde professionnel et donc les travailler a été enrichissant.
+
+\end{document}
