@@ -1,5 +1,13 @@
 \contentsline {section}{\numberline {1}Le choix du jeu}{1}{section.1}%
-\contentsline {paragraph}{Attention}{1}{section*.3}%
-\contentsline {section}{\numberline {2}La programmation}{1}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Les pages et les boites}{1}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}les menus et les boutons}{2}{subsection.2.2}%
+\contentsline {paragraph}{Attention}{2}{section*.3}%
+\contentsline {section}{\numberline {2}La programmation}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Les commentaires}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}L'habitude}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}La manière de travailler}{2}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Les éléments du programme }{2}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Les pages et les boites}{2}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}les menus et les boutons}{4}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Le jeu}{4}{subsubsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.5}Les popups}{5}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}La class Text}{5}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Conclusion}{5}{section.3}%
