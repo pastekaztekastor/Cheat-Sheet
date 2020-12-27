@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.30)  27 DEC 2020 20:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.30)  27 DEC 2020 21:10
 entering extended mode
 **"./Compte Rendu.tex"
 ("Compte Rendu.tex"
@@ -536,46 +536,49 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write4
 \openout4 = `"Compte Rendu.toc"'.
 
-<Capture1.PNG, id=53, 754.31813pt x 622.57594pt>
+<Capture1.PNG, id=63, 754.31813pt x 622.57594pt>
 File: Capture1.PNG Graphic file (type png)
 <use Capture1.PNG>
 Package pdftex.def Info: Capture1.PNG  used on input line 66.
 (pdftex.def)             Requested size: 90.34424pt x 74.56339pt.
-<Capture2.PNG, id=55, 754.31813pt x 622.57594pt>
+<Capture2.PNG, id=65, 754.31813pt x 622.57594pt>
 File: Capture2.PNG Graphic file (type png)
 <use Capture2.PNG>
 Package pdftex.def Info: Capture2.PNG  used on input line 70.
 (pdftex.def)             Requested size: 90.34424pt x 74.56339pt.
-<Capture3.PNG, id=56, 754.31813pt x 622.57594pt>
+<Capture3.PNG, id=66, 754.31813pt x 622.57594pt>
 File: Capture3.PNG Graphic file (type png)
 <use Capture3.PNG>
 Package pdftex.def Info: Capture3.PNG  used on input line 74.
 (pdftex.def)             Requested size: 90.34424pt x 74.56339pt.
-<Capture4.PNG, id=57, 754.31813pt x 622.57594pt>
+<Capture4.PNG, id=67, 754.31813pt x 622.57594pt>
 File: Capture4.PNG Graphic file (type png)
 <use Capture4.PNG>
 Package pdftex.def Info: Capture4.PNG  used on input line 78.
 (pdftex.def)             Requested size: 90.34424pt x 74.56339pt.
- [1
 
-{C:/Users/Cartron Mathurin/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./Ca
-pture1.PNG> <./Capture2.PNG> <./Capture3.PNG> <./Capture4.PNG>]
-<Affichage .png, id=76, 1170.3725pt x 542.025pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[1
+
+{C:/Users/Cartron Mathurin/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+<Affichage .png, id=82, 1170.3725pt x 542.025pt>
 File: Affichage .png Graphic file (type png)
 <use Affichage .png>
 Package pdftex.def Info: Affichage .png  used on input line 95.
 (pdftex.def)             Requested size: 376.42575pt x 174.32822pt.
-<html.png, id=78, 697.4055pt x 316.18124pt>
+<html.png, id=84, 697.4055pt x 316.18124pt>
 File: html.png Graphic file (type png)
 <use html.png>
 Package pdftex.def Info: html.png  used on input line 103.
 (pdftex.def)             Requested size: 150.56798pt x 68.26228pt.
-<Page.png, id=79, 342.27875pt x 401.5pt>
+<Page.png, id=85, 342.27875pt x 401.5pt>
 File: Page.png Graphic file (type png)
 <use Page.png>
 Package pdftex.def Info: Page.png  used on input line 109.
 (pdftex.def)             Requested size: 94.10643pt x 110.38527pt.
-<Boite.png, id=80, 242.9075pt x 662.475pt>
+<Boite.png, id=86, 242.9075pt x 662.475pt>
 File: Boite.png Graphic file (type png)
 <use Boite.png>
 Package pdftex.def Info: Boite.png  used on input line 115.
@@ -584,38 +587,38 @@ Package pdftex.def Info: Boite.png  used on input line 115.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2] [3 <./Affichage .png> <./html.png> <./Page.png> <./Boite.png>]
-<Niveau.png, id=98, 1241.63875pt x 890.32625pt>
+[2 <./Capture1.PNG> <./Capture2.PNG> <./Capture3.PNG> <./Capture4.PNG>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Niveau.png, id=97, 1241.63875pt x 890.32625pt>
 File: Niveau.png Graphic file (type png)
 <use Niveau.png>
 Package pdftex.def Info: Niveau.png  used on input line 128.
 (pdftex.def)             Requested size: 418.25368pt x 299.90836pt.
- [4 <./Niveau.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 <./Affichage .png>] [4 <./html.png> <./Page.png> <./Boite.png>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
- [5]
+ [5 <./Niveau.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
  ("Compte Rendu.aux")
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
+Package rerunfilecheck Info: File `"Compte Rendu".out' has not changed.
+(rerunfilecheck)             Checksum: 7C6FD15F470B8142A2F9C8BD8FED2F07;781.
 
-
-Package rerunfilecheck Warning: File `"Compte Rendu".out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `"Compte Rendu".out':
-(rerunfilecheck)             Before: B037D31FA5C535EB7903482C8289F312;672
-(rerunfilecheck)             After:  7C6FD15F470B8142A2F9C8BD8FED2F07;781.
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
  ) 
 Here is how much of TeX's memory you used:
- 9942 strings out of 481212
- 152972 string characters out of 2900780
+ 9944 strings out of 481212
+ 152999 string characters out of 2900780
  420595 words of memory out of 3000000
- 25342 multiletter control sequences out of 15000+200000
+ 25344 multiletter control sequences out of 15000+200000
  543764 words of font info for 63 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,9n,47p,1114b,510s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -629,9 +632,9 @@ sfonts/cm/cmr17.pfb><C:/Users/Cartron Mathurin/AppData/Local/Programs/MiKTeX/fo
 nts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Cartron Mathurin/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Cartron Mat
 hurin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on "Compte Rendu.pdf" (5 pages, 354864 bytes).
+Output written on "Compte Rendu.pdf" (5 pages, 356481 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
+ 151 PDF objects out of 1000 (max. 8388607)
  24 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 142 words of extra memory for PDF output out of 10000 (max. 10000000)
 
