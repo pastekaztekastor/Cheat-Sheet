@@ -1,27 +1,191 @@
-# Processing build files
-programme_Main/build/
+# ========================================
+# Processing Project - .gitignore
+# ========================================
+
+# ----------------------------------------
+# Processing Build Files
+# ----------------------------------------
+# Build directory with compiled classes
+**/build/
 *.class
+*.jar
 
-# Application source duplicates
-application.windows32/source/
-application.windows64/source/
+# Processing temporary files
+.DS*.jar
+code/
 
-# LaTeX temporary files
-Compte_Rendu/*.aux
-Compte_Rendu/*.log
-Compte_Rendu/*.out
-Compte_Rendu/*.toc
-Compte_Rendu/*.synctex.gz
-Compte_Rendu/*.bak
-Compte_Rendu/build/
+# Processing export folders (keep only source)
+application.linux-*/source/
+application.macosx/source/
+application.windows*/source/
 
-# OS files
-.DS_Store
-Thumbs.db
-desktop.ini
+# ----------------------------------------
+# LaTeX Temporary Files
+# ----------------------------------------
+# Generated files from LaTeX compilation
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.synctex(busy)
+*.bak
+*.fls
+*.fdb_latexmk
+*.bcf
+*.run.xml
+*.blg
+*.bbl
+*.dvi
+*.nav
+*.snm
+*.vrb
+*.lof
+*.lot
+*.idx
+*.ilg
+*.ind
+*.glo
+*.gls
+*.glg
+*.ist
+*.acn
+*.acr
+*.alg
+*.glsdefs
 
-# Temporary files
-*~
+# ----------------------------------------
+# IDEs and Editors
+# ----------------------------------------
+# Processing IDE
+.metadata/
+*.pde~
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# NetBeans
+nbproject/
+nbbuild/
+dist/
+nbdist/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
 *.swp
 *.swo
+*.swn
+*~
 .*.swp
+Session.vim
+
+# Emacs
+\#*\#
+.\#*
+
+# ----------------------------------------
+# Operating System Files
+# ----------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+
+# Linux
+.directory
+.Trash-*
+.nfs*
+
+# ----------------------------------------
+# Project Specific
+# ----------------------------------------
+# User data that shouldn't be shared
+programme_Main/text/score.txt
+programme_Main/data/score.txt
+
+# Backup files
+*.backup
+*.orig
+*.rej
+
+# ----------------------------------------
+# Logs and Databases
+# ----------------------------------------
+*.log
+logs/
+*.sql
+*.sqlite
+*.db
+
+# ----------------------------------------
+# Compressed Files (except releases)
+# ----------------------------------------
+# Uncomment if you don't want to track archives
+# *.zip
+# *.tar.gz
+# *.rar
+# *.7z
+
+# ----------------------------------------
+# Development Tools
+# ----------------------------------------
+# Git
+*.diff
+*.patch
+
+# npm (if used)
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Maven (if used)
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+
+# Gradle (if used)
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
