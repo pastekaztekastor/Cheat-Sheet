@@ -1,0 +1,27 @@
+# Processing build files
+programme_Main/build/
+*.class
+
+# Application source duplicates
+application.windows32/source/
+application.windows64/source/
+
+# LaTeX temporary files
+Compte_Rendu/*.aux
+Compte_Rendu/*.log
+Compte_Rendu/*.out
+Compte_Rendu/*.toc
+Compte_Rendu/*.synctex.gz
+Compte_Rendu/*.bak
+Compte_Rendu/build/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*~
+*.swp
+*.swo
+.*.swp
